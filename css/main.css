@@ -46,6 +46,11 @@ h1, p {
     height: 70px;
 }
 
+.hovered {
+    background-color: rgba(243, 255, 15, 0.4);
+    border: 2px dashed rgba(80, 206, 22, 0.6);
+}
+
 #heart {
     top: 40%;
     left: 50%;
@@ -102,6 +107,10 @@ h1, p {
 .label:hover {
     background-color: #2980b9;
     transform: translateY(-2px);
+}
+
+.label-hovering {
+    background-color: #68ebf9;
 }
 
 .reset-btn {
