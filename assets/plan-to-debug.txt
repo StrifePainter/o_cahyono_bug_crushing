@@ -1,0 +1,13 @@
+List to debug:
+
+1. Fixing the reset button so that the puzzle will retract any labels that are on the puzzle board
+
+2. Multiple labels should not be dropping into the zone. Make it so only one label can be dropped at a time.
+
+3. Creating a highlight area when hovering label over a droppable area in the human anatomy puzzle
+
+Steps to fix for each bug:
+
+PROBLEM 1:
+- To make everything reset, need to target the areas that need to be reset, which are the labels.
+- 

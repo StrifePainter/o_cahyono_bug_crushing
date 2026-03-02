@@ -5,7 +5,7 @@ console.log("JavaScript File is linked");
 const labels = document.querySelectorAll(".label");
 const targetZones = document.querySelectorAll(".target-zone");
 let currentDraggedElement = null;
-// add variable for reset button;
+// add variable for reset button; (homework)
 
 //function
 function dragStart() {
@@ -55,5 +55,5 @@ targetZones.forEach(zone => {
     zone.addEventListener("drop", dropped);
 })
 
-//add event listener for the reset button (hw)
+//add event listener for the reset button (homework)
 //listen for click event and then call for a reset function
