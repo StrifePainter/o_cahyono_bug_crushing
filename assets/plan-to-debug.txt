@@ -4,7 +4,7 @@ List to debug:
 
 2. Multiple labels should not be dropping into the zone. Make it so only one label can be dropped at a time.
 
-3. Creating a highlight area when hovering label over a droppable area in the human anatomy puzzle
+3. Creating a highlight area when hovering label over a droppable area in the human anatomy puzzle. The draggable label will also change colour when being hovered over area zone. Make it so that both highlights will be removed when no longer hovering.
 
 Steps to fix for each bug:
 
@@ -31,4 +31,9 @@ PROBLEM 2:
 
 
 3. PROBLEM 3:
-- Highlight the area when hovering over with the label! Must need to make js recognize when dragging and hovering over the area will mean something, which would mean targeting the drop zone as well.
+- Highlight the area when hovering over with the label! Must need to make js recognize when dragging and hovering over the area will mean something, which would mean targeting the drop zone and labels as well.
+- Make an event listener to see the trigger of dragging over, then direct it to the function
+- make a function when being dragged over the target zone, under the function dragOver.
+- since it's changing the colour, make a new class for just hovering in css (so it can be changed to that when the function calls for it.)
+- When exiting, the colour has to be removed.
+- Needs to add 2 new functions: enter (the zone) and exit while dragging.

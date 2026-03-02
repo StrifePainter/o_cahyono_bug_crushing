@@ -21,6 +21,18 @@ function dragOver(e) {
     console.log("drag over called");
 }
 
+function dragEnter(e) {
+    e.preventDefault();
+    this.classList.add("hovered");
+    //for bug 3, when zone is being hovered over
+}
+
+function dragLeave() {
+    this.classList.remove("hovered");
+    //for bug 3, when zone is not being hovered, remove
+}
+
+
 function dropped(e) {
     e.preventDefault();
     console.log("dropped");
@@ -39,6 +51,9 @@ function dropped(e) {
 
     //reset the reference
     currentDraggedElement = null;
+
+    // bug 3 removes the highlight when it gets dropped
+    this.classList.remove("hovered");
 }
 
 // bug 1 function to make it go reset all labels, append the children. Added log to say reset process.
@@ -50,6 +65,8 @@ function reset() {
     });
 }
 
+
+
 //Event Listeners
 labels.forEach(label => {
     label.addEventListener("dragstart", dragStart);
@@ -58,10 +75,14 @@ labels.forEach(label => {
 targetZones.forEach(zone => {
     zone.addEventListener("dragover", dragOver);
     zone.addEventListener("drop", dropped);
+    zone.addEventListener("dragenter", dragEnter);
+    zone.addEventListener("dragleave", dragLeave);
+// bug 3 listen for when label enters and leaves the target zones
 })
 
 resetBtn.addEventListener("click", reset);
 // fix bug 1, listen to when the reset button is clicked and divert it to the reset function
+
 
 
 
