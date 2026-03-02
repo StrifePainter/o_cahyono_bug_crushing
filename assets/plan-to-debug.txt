@@ -1,0 +1,25 @@
+List to debug:
+
+1. Fixing the reset button so that the puzzle will retract any labels that are on the puzzle board
+
+2. Multiple labels should not be dropping into the zone. Make it so only one label can be dropped at a time.
+
+3. Creating a highlight area when hovering label over a droppable area in the human anatomy puzzle
+
+Steps to fix for each bug:
+
+PROBLEM 1:
+- To make everything reset, need to target what needs to be resetted, which are the labels (not the drop zones!!). Then we need to associate it with the reset button (#reset-btn?) and make it go back to its original location.
+- in js, need to target all labels (so target the class) for reset so make it a vairable. Also make the reset button a variable so it can be targetted.
+- to activate the function itself, use event listener to watch out if the reset button gets clicked.
+- in functios section, make it a function that all the labels that are in the target zones will reset
+
+
+
+PROBLEM 2:
+- To make the labels only drop in a zone one at a time, should tell js to not let the label drop in the droppable area to be placed if there is an existing element (the CHILD??) in da zone.
+
+
+
+3. PROBLEM 3:
+- Highlight the area when hovering over with the label! Must need to make js recognize when dragging and hovering over the area will mean something, which would mean targeting the drop zone as well.

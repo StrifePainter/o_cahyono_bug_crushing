@@ -5,7 +5,10 @@ console.log("JavaScript File is linked");
 const labels = document.querySelectorAll(".label");
 const targetZones = document.querySelectorAll(".target-zone");
 let currentDraggedElement = null;
-// add variable for reset button;
+const labelBox = document.querySelector("#label-box");
+// grabs element from HTML, aka the label-box for promblem 1
+const resetBtn = document.querySelector("#reset-btn");
+// grabbing the reset button to have variable for problem 1
 
 //function
 function dragStart() {
@@ -13,7 +16,7 @@ function dragStart() {
     currentDraggedElement = this;
 }
 
-function dragOver() {
+function dragOver(e) {
     e.preventDefault();
     console.log("drag over called");
 }
@@ -37,23 +40,28 @@ function dropped(e) {
     currentDraggedElement = null;
 }
 
-//function reset() {
-    //collect all the labels and put them back
-    //check all target zones/loop through them, see IF the dropzone has a label in it
-    //if it doesn add that label back to the pieces
-    // labelBox.appendChild(); put back piece
-//}
+function reset() {
+    console.log("Puzzle is resetting!");
 
+    labels.forEach(label => {
+        labelBox.appendChild(label);
+    });
+}
 
 //Event Listeners
-labels.foreEach(label => {
+labels.forEach(label => {
     label.addEventListener("dragstart", dragStart);
 })
 
 targetZones.forEach(zone => {
-    zone.addEventListener("dragover", drag0ver);
+    zone.addEventListener("dragover", dragOver);
     zone.addEventListener("drop", dropped);
 })
 
-//add event listener for the reset button (hw)
+resetBtn.addEventListener("click", reset);
+// fix bug 1, listen to when the reset button is clicked and divert it to the reset function
+
+
+
+//add event listener for the reset button (homework)
 //listen for click event and then call for a reset function
