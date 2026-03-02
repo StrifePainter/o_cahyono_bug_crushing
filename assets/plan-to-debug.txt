@@ -18,6 +18,15 @@ PROBLEM 1:
 
 PROBLEM 2:
 - To make the labels only drop in a zone one at a time, should tell js to not let the label drop in the droppable area to be placed if there is an existing element (the CHILD??) in da zone.
+- the current file has dropped function, so fix it in the function dropped area. (fixed in class) Currently it is already fixed to prevent the double drops, where it recognizes if the piece is being dragged by using an if statment. If the child (label) has 1 label in it already, it drops the piece my appending it (the child) and then reset it
+- add console log so it's more clear that the zone is full, for clarity sake
+
+-(Personal side NOTES, Googled what is currentDraggedElement = null)
+     - means you are intentionally setting a variable named currentDraggedElement to have no value or to be empty. 
+     - serving the following purposes:
+     - Intentional Empty State: It declares that no element is currently being dragged.
+     - Resetting/Cleaning Up: It clears out a previously stored reference to a DOM element, usually after a drag operation has finished (dragend) or when no drag is happening.
+     - Preventing Errors: It explicitly sets the state, ensuring that the code does not accidentally try to interact with a previously dragged, non-existent element.
 
 
 

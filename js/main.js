@@ -25,11 +25,12 @@ function dropped(e) {
     e.preventDefault();
     console.log("dropped");
 
-    //prevent doulbe drops here
+    //prevent double drops here for bug 2!!!!
     //if this dropzone has a child, don't let it drop
-    //use a return statement
+    //use a return statement, using an !!IF STATEMENT!!
 
     if(this.children.length>=1) {
+        console.log("Zone is filled!");
         return;
     }
 
@@ -40,6 +41,7 @@ function dropped(e) {
     currentDraggedElement = null;
 }
 
+// bug 1 function to make it go reset all labels, append the children. Added log to say reset process.
 function reset() {
     console.log("Puzzle is resetting!");
 
